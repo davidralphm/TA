@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "map.h": "c",
+        "stdio.h": "c",
+        "sdl_image.h": "c",
+        "sdl.h": "c",
+        "button.h": "c",
+        "game.h": "c",
+        "font.h": "c",
+        "enemy.h": "c",
+        "item.h": "c",
+        "player.h": "c",
+        "sounds.h": "c",
+        "enemyspawner.h": "c",
+        "sprite.h": "c",
+        "math.h": "c",
+        "textures.h": "c"
+    }
+}
