@@ -23,7 +23,7 @@ static int Sprite_Compare(const void *a, const void *b) {
     Sprite *spriteA = *((Sprite**) a);
     Sprite *spriteB = *((Sprite**) b);
 
-    return (int) (spriteA->dist * 64.0 - spriteB->dist * 64.0);
+    return (int) (spriteA->dist * 1000.0 - spriteB->dist * 1000.0);
 }
 
 // Fungsi untuk sorting sprite

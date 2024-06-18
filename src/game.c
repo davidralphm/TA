@@ -79,7 +79,7 @@ static const char *HELP_MENU_LINES_1[] = {
     "W, A, S, D         - Player movement",
     "Mouse movement     - Player rotation",
     "Left mouse button  - Shoot fireball",
-    "ESC                - Pause game",
+    "~                  - Pause game",
     "M                  - Show minimap",
     "\0"
 };

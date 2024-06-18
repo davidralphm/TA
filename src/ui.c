@@ -45,5 +45,20 @@ void UI_DrawButton(Game *game, SDL_Rect *srcRect, SDL_Rect *dstRect) {
 }
 
 void UI_DrawBackground(Game *game) {
+    switch (game->globals.page) {
+        case GAME_PAGE_LOSE_GAME:
+        case GAME_PAGE_LOSE_LEVEL:
+            SDL_SetTextureColorMod(BACKGROUND_TEXTURE, 255, 64, 64);
+            break;
+        
+        case GAME_PAGE_WIN_GAME:
+        case GAME_PAGE_WIN_LEVEL:
+            SDL_SetTextureColorMod(BACKGROUND_TEXTURE, 64, 255, 64);
+            break;
+
+        default:
+            SDL_SetTextureColorMod(BACKGROUND_TEXTURE, 255, 255, 255);
+    }
+
     SDL_RenderCopy(game->renderer, BACKGROUND_TEXTURE, NULL, NULL);
 }
