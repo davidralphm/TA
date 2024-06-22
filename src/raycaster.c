@@ -111,22 +111,16 @@ double Raycaster_CastRay(double x, double y, double angle) {
 }
 
 void Raycaster_Render(unsigned *pixels, Player *player) {
-    // Hitung sudut dari ray paling kiri layar
-    double rayAngle = player->angle + player->camFOV / 2.0;
-    
-    // Hitung jumlah perubahan sudut dari satu ray ke ray berikutnya
-    double rayAngleStep = player->camFOV / (double) VIEWPORT_W;
-
     for (int ray = 0; ray < VIEWPORT_W; ray++) {
+        // Hitung sudut dari ray paling kiri layar
+        double rayAngle = player->angle + player->camFOV / 2.0 - ((double) ray / (double) VIEWPORT_W) * player->camFOV;
+
         // Hitung ray direction x dan y
         double rayDirX = cos(rayAngle);
         double rayDirY = sin(rayAngle);
 
         // Hitung ray cosine untuk menghilangkan efek fisheye
         double rayCos = cos(rayAngle - player->angle);
-
-        //Update sudut ray untuk ray yang berikutnya
-        rayAngle -= rayAngleStep;
 
         // Hitung delta distance x dan y
         double deltaDistX = fabs(1.0 / rayDirX);

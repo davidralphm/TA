@@ -130,7 +130,7 @@ void Sprite_Add(Player *player, double spriteX, double spriteY, unsigned char te
     double transformedY = relativeX * sin(player->angle) + relativeY * cos(player->angle);
 
     // Cek jarak sprite terhadap pemain
-    if (transformedX <= 0.0) return; // Sprite terlalu dekat dengan pemain atau berada di belakang pemain
+    if (transformedX < 0.001) return; // Sprite terlalu dekat dengan pemain atau berada di belakang pemain
 
     // Simpan jarak sprite
     sprite->dist = transformedX;

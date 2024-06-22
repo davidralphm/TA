@@ -458,6 +458,16 @@ static void _Game_RenderMenu(Game *game) {
 
     // Khusus untuk win level dan lose level page
     if (game->globals.page >= GAME_PAGE_WIN_LEVEL) {
+        // Animasi api
+        if (game->globals.page == GAME_PAGE_WIN_LEVEL || game->globals.page == GAME_PAGE_WIN_GAME) {
+            UI_DrawMenuAnim(game, 1, WINDOW_HW - 128 - 64, -16);
+            UI_DrawMenuAnim(game, 1, WINDOW_HW + 128, -16);
+        } else {
+            UI_DrawMenuAnim(game, 0, WINDOW_HW - 128 - 64, 0);
+            UI_DrawMenuAnim(game, 0, WINDOW_HW + 128, 0);
+        }
+
+        // Stats information
         char statsText[64];
 
         const char *statsMessage[7] = {

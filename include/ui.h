@@ -15,4 +15,7 @@ void UI_DrawButton(Game *game, SDL_Rect *srcRect, SDL_Rect *dstRect);
 // Fungsi untuk menggambar background menu
 void UI_DrawBackground(Game *game);
 
+// Fungsi untuk menggambar animasi pada win dan lose menu
+void UI_DrawMenuAnim(Game *game, unsigned char animId, int x, int y);
+
 #endif
